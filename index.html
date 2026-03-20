@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitaly AI Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- ── PANTALLA DE SELECCIÓN ── -->
+    <div class="dept-screen" id="deptScreen">
+        <div class="dept-inner">
+            <div class="dept-logo">
+                <div class="logo-mark">
+                    <span class="logo-v">V</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="logo-text">
+                    <h1>Vitaly</h1>
+                    <span class="logo-sub">Knowledge Base</span>
+                </div>
+            </div>
+            <p class="dept-prompt">Selecciona el departamento sobre el que vas a consultar</p>
+            <div class="dept-grid" id="deptGrid">
+                <button class="dept-btn" data-value="0.- ANTECEDENTES">
+                    <span class="dept-num">00</span>
+                    <span class="dept-name">Antecedentes</span>
+                </button>
+                <button class="dept-btn" data-value="1.- ADEPLUS">
+                    <span class="dept-num">01</span>
+                    <span class="dept-name">Adeplus</span>
+                </button>
+                <button class="dept-btn" data-value="2.- ADMINISTRACIÓN Y FINANZAS">
+                    <span class="dept-num">02</span>
+                    <span class="dept-name">Administración y Finanzas</span>
+                </button>
+                <button class="dept-btn" data-value="3. - DESARROLLO DE NEGOCIO">
+                    <span class="dept-num">03</span>
+                    <span class="dept-name">Desarrollo de Negocio</span>
+                </button>
+                <button class="dept-btn" data-value="4 .- FORMACIÓN">
+                    <span class="dept-num">04</span>
+                    <span class="dept-name">Formación</span>
+                </button>
+                <button class="dept-btn" data-value="5 .-FINANCIERO">
+                    <span class="dept-num">05</span>
+                    <span class="dept-name">Financiero</span>
+                </button>
+                <button class="dept-btn" data-value="6.- OPERACIONES">
+                    <span class="dept-num">06</span>
+                    <span class="dept-name">Operaciones</span>
+                </button>
+                <button class="dept-btn" data-value="7 .- PERSONAS">
+                    <span class="dept-num">07</span>
+                    <span class="dept-name">Personas</span>
+                </button>
+                <button class="dept-btn" data-value="8.- JURÍDICO">
+                    <span class="dept-num">08</span>
+                    <span class="dept-name">Jurídico</span>
+                </button>
+                <button class="dept-btn" data-value="9.- PREVENCIÓN TÉCNICA">
+                    <span class="dept-num">09</span>
+                    <span class="dept-name">Prevención Técnica</span>
+                </button>
+                <button class="dept-btn" data-value="10.- VIGILANCIA DE LA SALUD.">
+                    <span class="dept-num">10</span>
+                    <span class="dept-name">Vigilancia de la Salud</span>
+                </button>
+                <button class="dept-btn" data-value="11.- GRANDES CUENTAS">
+                    <span class="dept-num">11</span>
+                    <span class="dept-name">Grandes Cuentas</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PANTALLA DE CHAT ── -->
+    <div class="chat-screen" id="chatScreen" style="display:none;">
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-mark">
+                    <span class="logo-v">V</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="logo-text">
+                    <h1>Vitaly</h1>
+                    <span class="logo-sub">Knowledge Base</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="dept-badge" id="deptBadge"></div>
+                <button class="change-dept-btn" id="changeDeptBtn" title="Cambiar departamento">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Cambiar
+                </button>
+            </div>
+        </header>
+
+        <main class="chat-view" id="chatView"></main>
+
+        <div class="typing-indicator" id="loader">
+            <div class="loader-dots"><span></span><span></span><span></span></div>
+            <span class="loader-text">Procesando consulta...</span>
+        </div>
+
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta..." autocomplete="off">
+                <button class="send-btn" id="sendBtn" onclick="sendQuery()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
